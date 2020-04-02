@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script src="jquery-1.9.1.js"></script>
+</head>
+<body>
+<button id="getGis">Get</button>
+<script>
+    let btn=document.getElementById('getGis');
+ $(document).ready(function(){
+     $("#getGis").click(function(){
+         console.log('success')
+         $.ajax({
+             type:'post',
+             url:'',
+             dataType:'xml',
+             success:function(data){
+              alert
+             },
+             error:function(err){
+                 alert()
+             }
+         })
+     })
+ })
+
+    </script>
+</body>
+</html>

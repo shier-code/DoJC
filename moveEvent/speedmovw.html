@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+#div1{
+	width:200px;
+	height:150px;
+	background:#F03;
+	position:relative;
+	left:-200px;
+	
+	filter:alpha(opacity:20);
+	opacity:0.2;
+	}
+#div1 span{
+     width:20px;
+	 height:50px;
+	 background:#069;
+	 position:absolute;
+	 left:200px;	
+	}	  
+</style>
+<script>
+ window.onload=function(){
+	 var btn=document.getElementById("div1");
+	 btn.onmouseover=function(){
+		 startMove(0);
+	 startAlpha(100);
+		 }
+	btn.onmouseout=function(){
+		startMove(-200);
+    	startAlpha(20);
+		}	 
+	 
+	 }
+	 	var timer=null;
+		var timer1=null;
+	function startMove(iTarget){
+		clearInterval(timer);
+		var btn=document.getElementById('div1');
+		timer=setInterval(function(){
+			var speed=(iTarget-btn.offsetLeft)/20;
+			// speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				
+			if(btn.offsetLeft==iTarget){
+				clearInterval(timer);
+				}
+			else{
+				
+				
+				btn.style.left=btn.offsetLeft+speed+'px';
+				}
+			},30);
+		
+		
+		} 
+		function startAlpha(ialpha){
+			clearInterval(timer1);
+			var btn=document.getElementById('div1');
+			var ispeed=0;
+			var alpha=20;
+			
+			timer1=setInterval(function(){
+				if(alpha>ialpha){
+					ispeed=-10;}
+				else{ispeed=10;}	
+				if(alpha==ialpha){
+					clearInterval(timer1);
+					}
+				else{
+					alpha+=ispeed;
+					btn.style.filter='alpha(opacity:'+alpha+')'
+					btn.style.opacity=alpha/100;	}
+				},30);
+			}
+</script>
+</head>
+
+<body>
+<div>
+<div id="div1">
+  <span>分享</span>
+  
+</div>
+<div>
+  <span style="width:100px;height:200px;background:#009;float:lef"></span>
+<div>
+</div>
+</body>
+</html>

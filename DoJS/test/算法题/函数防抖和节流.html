@@ -1,0 +1,64 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+	<style type="text/css">
+		html,
+		body {
+			height: 500%;
+		}
+	</style>
+</head>
+
+<body>
+	<button id="btn">按钮</button>
+</body>
+<script>
+	// 函数节流：函数执行一次后，只有大于执行周期后才会执行第二次
+
+	/**
+	 * 函数节流
+	 * @param fn 要被节流的函数
+	 * @param delay 规定的时间
+	 */
+	function throttle(fn, delay) {
+		//记录上一次函数出发的时间
+		var lastTime = 0;
+		return function () {
+			//记录当前函数执行的时间；
+			var nowTime = Date.now();
+			//	console.log('scrool 被触发了'+Date.now())
+			if (nowTime - lastTime > delay) {
+				fn.call(this)
+				//同步时间
+				lastTime = nowTime;
+			}
+		}
+	}
+	document.onscroll = throttle(function () {
+		console.log('scrool 被触发了' + Date.now())
+	}, 1200);
+
+	//函数防抖：一个需要频繁执行的函数，在规定的时间，只让最后一次生效
+	/**
+	 * 函数防抖
+	 * 
+	 */
+	function debounce(fn, delay) {
+		var timer = null;
+		return function () {
+			clearTimeout(timer)
+			timer = setTimeout(function () {
+				fn.apply(this);
+			}, delay)
+		}
+	}
+	document.querySelector('#btn').onclick = debounce(function () {
+		console.log('点击事件触发' + Date.now())
+	}, 1000)
+</script>
+
+</html>

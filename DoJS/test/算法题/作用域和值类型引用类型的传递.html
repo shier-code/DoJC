@@ -1,0 +1,59 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>无标题文档</title>
+   <style type="text/css">
+   </style>
+</head>
+
+<body>
+
+
+</body>
+<script>
+   var num1 = 55;
+   var num2 = 65;
+   function f1(n, n1) {
+      n = 100;
+      n1 = 100;
+      num2 = 100;
+      console.log(n);
+      console.log(n1);
+      console.log(num2);
+   }
+   f1(num1, num2)
+   console.log(num1);
+   console.log(num2);
+
+
+   function Person(name, age) {
+      this.name = name;
+      this.age = age
+   }
+   function P1(person) {
+      person.name = "ls";
+      person = new Person('we', 12)
+   }
+
+   var p = new Person('zs', 19)
+   console.log(p.name);
+   P1(p)
+   console.log(p.name);
+
+
+   console.log(['1', '2', '3'].map(parseInt))
+
+   console.log('foo is')
+   const foo = new Foo()
+   function Foo() {
+
+   }
+   console.log(foo)
+   console.log(1 == true)
+
+</script>
+
+</html>

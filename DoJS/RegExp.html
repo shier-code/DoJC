@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const text = "sst,cat,bat";
+        const pattern = /.at/g;
+       
+        console.log(text.split(pattern))
+        console.log(text.match(pattern))
+        console.log(text.replace(/s{2}/g, 'a'))
+
+        console.log(pattern.test(text))
+        const phone = /^[3-9][0-9]{9}$/;
+        console.log(phone.test('15161616156'));
+        const space=" 111  111 ";
+       // console.log(space.replace(/^\s*|\s*$/g,''))
+       console.log(space.replace(/\s/g,''))
+  // const email=/^\w{3,}(\.\w+)*@([0-9a-Z]+)(\.[A-z]{2,6}){1,2}$/;
+  const email2=/^\w{3,}(\.\w+)*@([0-9A-z]+)(\.[A-z]{2,6}){1,2}$/
+  console.log(email2.test("8787878@qq.com"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        var arr = [2, 3, 3, 3, 1, 1, 6, 4];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < i; j++) {
+                if (arr[j] === arr[j + 1]) {
+                    arr.splice(j, 1);
+                    j--
+                }
+            }
+        }
+
+        console.log(arr);
+
+        // 不能过滤掉NaN,obj
+        var arr2 = [1, 1, null, null, NaN, NaN, {}, {}]
+        for (var x = 0; x < arr2.length; x++) {
+            for (var y = x + 1; y < arr2.length; y++) {
+                if (arr2[x] === arr2[y]) {
+                    arr2.splice(y, 1);
+                    y--
+                }
+            }
+        }
+        console.log(arr2);
+
+        var arr3 = [1, 1, null, null, NaN, NaN, {}, {}]
+
+        function distinct(arr) {
+            var newArr = [];
+            var obj = {};
+            for (var i = 0; i < arr.length; i++) {
+                console.log(obj[arr[i]]);
+                if (!obj[arr[i]]) {
+
+
+                    obj[arr[i]] = 1;
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+
+        }
+        console.log(distinct(arr3))
+
+
+        var objtest = {
+            name: 'wentan',
+            age: 18
+        }
+        console.log()
+    </script>
+</body>
+
+</html>

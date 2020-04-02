@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box{
+        width:100px;
+        height:100px;
+        background-color: aquamarine;
+        position: absolute;
+    }
+    </style>
+<body>
+<div id="box">
+    </div>
+<script>
+    var box1=document.getElementById('box')
+    box1.onmousedown=function(){
+        document.onmousemove=function(event){
+            var event=event||window.event;
+            var left=event.clientX;
+            var top=event.clientY;
+
+            box1.style.left=left+'px';
+            box1.style.top=top+'px';
+        }
+    }
+    document.onmouseup=function(){
+        document.onmousemove=null
+        document.onmouserup=null
+    }
+    </script>
+</body>
+</html>

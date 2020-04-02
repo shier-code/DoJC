@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+
+#move{
+   width:400px;
+   height:300px;
+   border:solid 2px #666666;
+   background:#afafaf;
+   margin:0 auto;  
+   opacity:1;
+   filter:alpha()	
+	}
+#move a{
+	display:inline-block;
+	background:#cfcfcf;
+	border:solid 1px #99CC99;
+	border-radius:3px;
+    width:120px;
+	height:120px;
+	text-align:center;
+	float:left;
+	margin:5px 5px;
+	text-decoration:none;	
+	position:relative;
+	padding-top:20px;
+	}	
+#move a i{
+	width:100%;
+	display:inline-block;
+	text-align:center;
+	position:relative;
+	top:20px;
+     left:0px;
+	}
+#move a:hover{
+	color:#F00;}		
+</style>
+<script src="move.js">
+</script>
+<script src="jquery-3.2.1.min.js">
+</script>
+</head>
+
+<body>
+<div id="move">
+    <a href="#"><i><img src="首页图标/adminprinter.png"></i><p>图标</p></a>
+    <a><i><img src="首页图标/buyprinter.png"></i><p>图标</p></a>
+    <a><i><img src="首页图标/designer.png"></i><p>图标</p></a>
+    <a><i><img src="首页图标/printservice.png"></i><p>图标</p></a>
+    <a><i><img src="首页图标/quteworks.png"></i><p>图标</p></a>
+     <a><i><img src="首页图标/order.png"></i><p>图标</p></a>
+</div>
+<div id="one" style="width:200px;height:200px;background:#F00;opacity:0.5;"></div>
+</body>
+<script>
+window.onload=function(){
+	var one=document.getElementById('one');
+	var aMove=document.getElementById('move');
+	var aList=aMove.getElementsByTagName('a');
+	for(var i=0;i<aList.length;i++){
+		aList[i].onmouseover=function(){
+			var _this=this.getElementsTagName('i')[0];
+			startMove(_this,{top:-20,opacity:0},function(){
+				_this.style.top=30+'px';
+				startMove(_this,{top:20,opacity:100});
+				});
+			}
+		}
+	
+	}	
+
+	one.onmouseover=function(){
+		startMove(this,{width:400,height:400,opacity:100,margin:30});
+		
+		
+	}
+	one.onmouseout=function(){
+		startMove(this,{width:200,height:200,opacity:30});
+	}
+	
+	/*$(function(){
+		$('#tips a').mouseenter(function(){
+			$(this).find('i').animate({top:"-25px",opacity:"0"},300,function(){
+				$(this).css({top:"30px"});
+				$(this).animate({top:"20px",opacity:"1"},300)
+				})
+			})
+		})	*/	
+</script>
+</html>

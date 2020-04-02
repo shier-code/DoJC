@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         参数，
+         obj:要绑定的对象
+         eventStr:事件的字符串（不要on）
+         callback：回调函数
+        */
+
+        function bind(obj,eventStr,callback){
+            if(obj.addEventLister){
+             obj.addEventLister(eventStr,callback,false)
+            }else{
+            /* 
+              this由调用方式决定
+              callback.call(obj)
+             */
+             
+            //IE8以下   
+              obj.attachEvent("on"+eventStr,function(){
+                 //在匿名函数中调用回调函数
+                  callback.call(obj)
+              })
+            }
+        }  
+    </script>
+</body>
+
+</html>

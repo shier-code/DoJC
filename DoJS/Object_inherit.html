@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var testObj = new Object();
+        testObj.name = "bajie";
+
+        console.log(name in testObj);
+        console.log(testObj)
+        function supertype() {
+            this.color = ['red', 'pink']
+        }
+        function subtype() {
+
+        }
+       
+        subtype.prototype=new supertype();
+        var instance=new subtype()
+        console.log(instance.color)
+
+        console.log(subtype.__proto__)
+
+        class Super {};
+        class Sub extends Super{};
+        const sub=new Sub()
+        console.log(Sub.__proto__)
+    </script>
+</body>
+
+</html>

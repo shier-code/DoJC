@@ -1,0 +1,40 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+	<style type="text/css">
+	</style>
+</head>
+
+<body>
+
+
+</body>
+<script>
+	//数组去重
+	const newArr = [...new Set([2, 3, 4, 4, 5, 5])];
+	console.log(newArr)
+	for (var i = 0; i < newArr.length; i++) {
+		for (var j = i + 1; j < newArr.length; j++) {
+			if (newArr[i] === newArr[j]) {
+
+				newArr.splice(j, 1)
+				j--;
+			}
+		}
+	}
+	console.log(newArr)
+	//数组乱序
+	const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+	console.log(arr.sort(() => 0.5 - Math.random()))
+	const arr2 = [1, 2, 3, 4, 5, 6];
+
+	console.log(arr2.sort(() => 
+		0.1 - Math.random()
+	))
+</script>
+
+</html>

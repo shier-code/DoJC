@@ -1,0 +1,30 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        var arr = [2, 3, 1, 6, 4];
+        //轮数
+        for (var i = 0; i < arr.length - 1; i++) {
+            //次数
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+            //判断前一个大于后一个数是进行交换
+            if(arr[j]>arr[j+1]){
+                var temp;
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp
+            }    
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+
+</html>

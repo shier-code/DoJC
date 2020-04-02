@@ -1,0 +1,27 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5];
+        var arr2 = [1, 2, 3, 4, 5]
+        var mapArr = arr.map(function (item) {
+            return item * 2;
+        })
+        var mapArr2 = arr2.forEach(function (item,index) {
+            return arr2[index] =item * 2;
+        })
+        console.log(arr);
+        console.log(mapArr);
+        console.log(arr2);
+        console.log(mapArr2);
+    </script>
+</body>
+
+</html>

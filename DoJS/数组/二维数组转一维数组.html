@@ -1,0 +1,47 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        var arr = [
+            [2, 2],
+            [3, 3],
+            [4, 4]
+        ];
+        var arr2 = arr.reduce(function (a, b) {
+            return a.concat(b)
+        })
+        console.log(arr2);
+        var arr3 = [].concat.apply([], arr)
+        console.log(arr3)
+
+        let arrlength = arr3.length;
+        let n = 3;
+        let erweiArr=[];
+        let num = arrlength % n === 0 ? arrlength / n : Math.floor((arrlength / n) + 1)
+        for (let i = 0; i < num; i++) {
+            let newArr = arr3.slice(i * n, i * n + n)
+            erweiArr.push(newArr)
+        }
+        console.log(erweiArr)
+        // let baseArray = [1, 2, 3, 4, 5, 6, 7, 8];
+        // let len = baseArray.length;
+        // let n = 4; //假设每行显示4个
+        // let lineNum = len % n === 0 ? len / n : Math.floor((len / n) + 1);
+        // let res = [];
+        // for (let i = 0; i < lineNum; i++) {
+        //     // slice() 方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。且原始数组不会被修改。
+        //     let temp = baseArray.slice(i * n, i * n + n);
+        //     res.push(temp);
+        // }
+        // console.log(res);
+    </script>
+</body>
+
+</html>

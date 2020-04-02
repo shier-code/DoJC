@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 0.5rem;
+            height: 1rem;
+            background-color: antiquewhite;
+            font-size: 0.1rem;
+        }
+
+        /* html根元素字体大小设置屏幕区域的宽 */
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        这是rem字体
+     <div>
+            <script>
+                window.onload = function () {
+                    //获取屏幕的宽
+                    var clientwidth = document.documentElement.clientWidth;
+                    //获取html元素
+                    var htmlNode = document.querySelector('html');
+                    //设置字体大小
+                    htmlNode.style.fontSize = clientwidth + 'px';
+
+                }
+            </script>
+</body>
+
+</html>

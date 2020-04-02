@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="event.js"></script>
+<script src="script.js"></script>
+
+</head>
+
+<body>
+<div id="box1">
+   <input type="button" value="按钮" id="btn" >
+   <a href="new.html" id="go">跳转</a>
+ </div>
+</body>
+<script>
+ var a=[];
+ for(var i=0;i<10;i++){
+   let k='kuai'
+   a[i]=function(){
+     console.log(i)
+   }
+ }
+ a[0]();   //10
+
+ //console.log(k)   //let有块级作用域
+ //console.log(b); //let不能变量提升
+ let b=2;
+
+ const foo={}
+ foo.name='shier'
+ foo={};
+   
+</script>
+</html>

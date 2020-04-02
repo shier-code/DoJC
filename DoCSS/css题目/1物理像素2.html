@@ -1,0 +1,50 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>1物理像素的实现</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .box1::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: black;
+        }
+
+        @media screen and(-webkit-min-device-pixel-ratio:2) {
+            .box1::before {
+                transform: scaleY(0.5);
+            }
+        }
+
+        @media screen and(-webkit-min-device-pixel-ratio:3) {
+            .box1::before {
+                transform: scaleY(0.3333333);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 像素比=物理像素/css像素 -->
+    <div class="box1"></div>
+    <script>
+        window.onload = function () {
+
+        }
+    </script>
+</body>
+
+</html>

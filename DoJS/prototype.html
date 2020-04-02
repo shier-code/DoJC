@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+     function Person(){
+       var a=1;
+     }
+     Person.prototype.fun1=function(){
+         var fun1_val=4;
+
+         console.log('thisd is'+this);
+     }
+    
+     Person.prototype.name='jack';
+     Person.prototype.age=12;
+     var person1=new Person();
+     person1.fun1()
+     console.log(name in Person); 
+     console.log(person1);
+     console.log(Person.prototype);
+     console.log(person1.__proto__);
+     console.log(person1.__proto__.__proto__.__proto__);
+     console.log(person1.__proto__.__proto__);
+     console.log(Object.prototype);
+     console.log(Object);
+     var keys =Object.keys(Person.prototype);
+     console.log(keys);
+    // console.log(Person.hasOwnProperty(age))
+   
+
+     console.log(String.prototype)
+
+   function Animal(){
+
+   }
+    Animal.prototype={
+        constructor:Animal,
+        age:3,
+        name:'Tom'
+    }
+    console.log(Animal.prototype.constructor)
+    </script>
+</body>
+
+</html>

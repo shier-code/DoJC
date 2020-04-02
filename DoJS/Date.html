@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var somedate = new Date(2020, 2, 24);
+        console.log(somedate);
+        var now = new Date();
+        console.log(now);
+        console.log(somedate.getDay())
+        console.log(now.getTime())
+
+        var somedate2 = new Date(2003, 1, 2);
+        console.log(somedate2);
+        var sTART = Date.now();
+        console.log(sTART);
+        var end = +new Date();
+        console.log(end)
+        var newend = somedate.getFullYear();
+        var newend2 = somedate.getUTCFullYear();
+        console.log(newend);
+        console.log(newend2);
+    </script>
+</body>
+
+</html>

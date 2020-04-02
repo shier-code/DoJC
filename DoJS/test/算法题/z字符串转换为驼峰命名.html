@@ -1,0 +1,26 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        function myToUpperCase(obj) {
+            var objArr = obj.split('-')
+            console.log(objArr[1].charAt(0).toUpperCase() + objArr[1].substr(1, objArr[1].length - 1))
+            for (var i = 1; i < objArr.length; i++) {
+                objArr[i] = objArr[i].charAt(0).toUpperCase() + objArr[i].substr(1, objArr[1].length - 1)
+            }
+            newObj = objArr.join('')
+            console.log(newObj)
+            return newObj
+        }
+        myToUpperCase("get-element-by-id")
+    </script>
+</body>
+
+</html>

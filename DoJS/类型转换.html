@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="event.js"></script>
+<script src="script.js"></script>
+
+</head>
+
+<body>
+<div id="box1">
+   <input type="button" value="按钮" id="btn" >
+   <a href="new.html" id="go">跳转</a>
+ </div>
+</body>
+<script>
+  console.time('test');
+   var str="12qqq";
+   //var newNum=Number(null)   //0
+   var newNum=Number(undefined)  //NaN
+   var newNum2=parseInt(str);
+   var num3=1;
+   console.log(newNum);
+   console.log(newNum2);
+   console.log(typeof(num3+""));
+   var result= 0 && NaN;
+   var result2= NaN && 0;
+   console.log(result);
+   console.log(result2);
+   console.timeEnd('test');
+   console.log('------------------------------')
+   console.log(typeof(Object));
+   console.log(typeof(String));
+   console.log(typeof(Boolean));
+   console.log(typeof(Function));
+   var obj=new  Object();
+   console.log(typeof(obj));
+   var str=new  String();
+   console.log(typeof(str));
+   var bool=new  Boolean();
+   console.log(typeof(bool));
+   var fun=new  Function();
+   console.log(typeof(fun));
+
+   console.log('2'.constructor);
+   console.log(Object.prototype.toString.call(12));
+  //类型判断
+  function P(name){
+    this.name=name;
+  }
+  const p=new P('tom')
+  console.log(Object.prototype.toString.call(p));
+  console.log(p instanceof Function)
+   
+</script>
+</html>

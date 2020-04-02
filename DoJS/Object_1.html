@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         var testObj=new Object();
+         testObj.name="bajie";
+  
+         console.log(name in testObj);
+         console.log(testObj)
+
+         var a=123;
+         var b=a;
+         a++;
+         var c=123;
+         console.log(a);        //124
+         console.log(b);        //123
+         console.log(b==c)      //true
+
+        function Person(){
+            this.name='wt'
+           this.setName();
+        }
+        Person.prototype.setName=function(){
+            this.name="lx"
+            console.log(this.name)
+        }
+        new Person();
+         
+        const parents={
+            faName:'fa',
+            age:100
+        }
+        const child=Object.create(parents,{
+            a:{}
+        })
+      
+     
+   
+        console.log("test object.keys ----"+Object.keys(child))
+         console.log(Object.prototype.toString.call(parents.age))
+    </script>
+</body>
+
+</html>

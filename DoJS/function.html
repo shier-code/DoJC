@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="event.js"></script>
+<script src="script.js"></script>
+
+</head>
+
+<body>
+<div id="box1">
+   <input type="button" value="按钮" id="btn" >
+   <a href="new.html" id="go">跳转</a>
+ </div>
+</body>
+<script>
+  var n1=2,n2=2;
+  function sum(n1,n2){
+         console.log(n1+n2);
+         n2=n2++;
+         n1=n1++;
+  }
+  sum(n1,n2);
+  console.log(n1,n2)
+
+   function testArgument(num1,num2){
+     return sum.apply(this,arguments)
+   }
+   testArgument(1,2)
+
+   var arr=[2,4,5,8];
+
+   var newArr=arr.map(function(x){
+     return x*2
+   })
+
+   console.log(newArr)
+   function factorail(num){
+     if(num<1){
+       return 1;
+     }
+     else{
+       return num*arguments.callee(num-1)
+     }
+   }
+   var calleeN=factorail(5)
+   console.log(calleeN)
+</script>
+</html>

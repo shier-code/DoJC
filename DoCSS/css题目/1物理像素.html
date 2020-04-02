@@ -1,0 +1,44 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>1物理像素的实现</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border-bottom: 1px solid #000000
+        }
+        body{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 像素比=物理像素/css像素 -->
+    <div class="box1"></div>
+    <script>
+        window.onload=function(){
+        var dpr=window.devicePixelRatio;
+        console.log('dpr:'+dpr);
+        
+        var scale=1/dpr;
+        //获取屏幕宽度
+        var width=document.documentElement.clientWidth;
+        
+        var metaNode=document.querySelector('meta[name="viewport"]');
+        metaNode.setAttribute('content','width=deivce-width,initial-scale='+scale+'user-scalable')
+        
+        var htmlNode=document.querySelector('html');
+        htmlNode.style.fontSize=width*dpr+'px'
+        let
+  
+        }
+    </script>
+</body>
+
+</html>
